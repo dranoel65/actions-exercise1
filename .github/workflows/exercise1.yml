@@ -6,21 +6,29 @@ jobs:
     job1:
             runs-on: ubuntu-latest
             steps:
+                    - name: Checkout
+                      uses: actions/checkout@v2
                     - name: date ubuntu
                       run: date
     job2:
             runs-on: windows-latest
             steps:
+                    - name: Checkout
+                      uses: actions/checkout@v2
                     - name: date windows
                       run: date.exe +"%Y-%m-%d"
     job3:
             runs-on: macos-latest
             steps:
+                    - name: Checkout
+                      uses: actions/checkout@v2
                     - name: date macos
                       run: date +%F
     job4:
             needs: [job1, job2, job3]
             runs-on: ubuntu-18.04
             steps:
+                    - name: Checkout
+                      uses: actions/checkout@v2
                     - name: date ubuntu2
                       run: date
